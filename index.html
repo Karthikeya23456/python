@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudySpace | Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+        <div class="logo">✦ StudySpace</div>
+
+        <p class="menu-label">MENU</p>
+        <nav>
+            <a href="#dashboard" class="nav-link active">▦ Dashboard</a>
+            <a href="#tasks" class="nav-link">✓ My Tasks</a>
+            <a href="#timetable" class="nav-link">▤ Timetable</a>
+            <a href="#notes" class="nav-link">▧ My Notes</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="profile">
+                <div class="avatar">S</div>
+                <div>
+                    <strong>Student</strong>
+                    <small>Personal Workspace</small>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">STUDENT WORKSPACE</p>
+                <h2>My Dashboard</h2>
+            </div>
+            <button class="theme-btn" id="themeBtn">☾ Dark Mode</button>
+        </header>
+
+        <section class="welcome" id="dashboard">
+            <div>
+                <p class="welcome-tag">YOUR PERSONAL STUDY SPACE</p>
+                <h1>Welcome back! 👋</h1>
+                <p>Stay focused, keep learning and achieve your goals.</p>
+                <button class="primary-btn" onclick="document.getElementById('tasks').scrollIntoView({behavior:'smooth'})">
+                    View My Tasks →
+                </button>
+            </div>
+            <div class="welcome-art">📚</div>
+        </section>
+
+        <section class="stats">
+            <div class="stat-card">
+                <div class="stat-icon purple">📋</div>
+                <p>Total Tasks</p>
+                <h2 id="totalTasks">0</h2>
+                <small>Tasks added</small>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon green">✓</div>
+                <p>Completed</p>
+                <h2 id="completedTasks">0</h2>
+                <small>Tasks finished</small>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon orange">⏳</div>
+                <p>Pending</p>
+                <h2 id="pendingTasks">0</h2>
+                <small>Tasks remaining</small>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon blue">📈</div>
+                <p>Progress</p>
+                <h2 id="progressText">0%</h2>
+                <small>Overall completion</small>
+            </div>
+        </section>
+
+        <div class="content-grid">
+
+            <section class="panel" id="tasks">
+                <div class="panel-heading">
+                    <div>
+                        <h3>My Tasks</h3>
+                        <p>Manage your daily study activities</p>
+                    </div>
+                    <span class="live-label">● LIVE</span>
+                </div>
+
+                <form id="taskForm">
+                    <input type="text" id="taskInput" placeholder="Enter a new task..." required>
+                    <button class="primary-btn" type="submit">+ Add</button>
+                </form>
+
+                <div class="task-list" id="taskList">
+                    <p class="empty">No tasks yet. Add your first task!</p>
+                </div>
+            </section>
+
+            <section class="panel progress-panel">
+                <h3>Study Progress</h3>
+                <p>Your productivity overview</p>
+
+                <div class="progress-circle" id="progressCircle">
+                    <div>
+                        <h2 id="circlePercent">0%</h2>
+                        <small>Completed</small>
+                    </div>
+                </div>
+
+                <p class="progress-message" id="progressMessage">
+                    Start adding tasks to track your progress.
+                </p>
+            </section>
+
+        </div>
+
+        <div class="content-grid bottom-grid">
+
+            <section class="panel" id="timetable">
+                <div class="panel-heading">
+                    <div>
+                        <h3>Today's Timetable</h3>
+                        <p>Your daily learning schedule</p>
+                    </div>
+                    <span class="date-label" id="todayDate"></span>
+                </div>
+
+                <div class="schedule-item">
+                    <span class="time">09:00 AM</span>
+                    <div><strong>Computer Networks</strong><small>Classroom 201</small></div>
+                    <span class="subject-dot purple-dot"></span>
+                </div>
+
+                <div class="schedule-item">
+                    <span class="time">11:00 AM</span>
+                    <div><strong>Database Management</strong><small>Classroom 204</small></div>
+                    <span class="subject-dot green-dot"></span>
+                </div>
+
+                <div class="schedule-item">
+                    <span class="time">02:00 PM</span>
+                    <div><strong>Programming Lab</strong><small>Computer Lab</small></div>
+                    <span class="subject-dot orange-dot"></span>
+                </div>
+            </section>
+
+            <section class="panel" id="notes">
+                <h3>Quick Notes 📝</h3>
+                <p>Write down important study points</p>
+
+                <textarea id="notesInput" placeholder="Start writing your notes here..."></textarea>
+                <button class="primary-btn save-btn" id="saveNotes">Save Notes</button>
+                <p class="save-status" id="saveStatus"></p>
+            </section>
+
+        </div>
+
+        <footer>
+            <p>© 2026 StudySpace. Designed for better learning.</p>
+            <p>Made with ❤️ for students</p>
+        </footer>
+
+    </main>
+</div>
+
+<script src="java.js"></script>
+</body>
+</html>
